@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function Screen1() {
@@ -8,13 +8,13 @@ export default function Screen1() {
   return (
       <View style={styles.container}>
         <Text>Screen1</Text>
+
         <Pressable
-            onPress={() => navigation.navigate('details', {
-                id: 42, 
-                name: "abc"
-            })}
+            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
         >
-            <Text>Go to screen 2</Text>
+            <Text>
+                Go to screen2
+            </Text>
         </Pressable>
       </View>
   );
